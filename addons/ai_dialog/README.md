@@ -1,9 +1,5 @@
 # Godot AI Dialog Plugin
 
-<p align="center">
-	<img src="icon.svg" width="256">
-</p>
-
 This Godot plugin helps with creating **AI generated dialogs for free!** Use it in RPG (dynamic quest assigning also possible) or bring your NPCs to life.
 
 Here is a simple example of how it works.
@@ -33,6 +29,3 @@ var response:String = NPC.generate_dialog("This is something the Player will say
 #print response or something with it
 print(response)
 ```
-
-## Demo project
-You can find a working demo (if you add your own token of openrouter.ai) here: [krishsharma0413/godot-AI-Dialog-demo](https://github.com/krishsharma0413/godot-AI-Dialog-demo)
