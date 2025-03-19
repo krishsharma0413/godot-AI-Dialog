@@ -6,9 +6,9 @@ var settings_panel
 func _enter_tree():
 
 	# ✅ Force register missing settings
-	register_setting("api_url", "https://openrouter.ai/api/v1/chat/completions", TYPE_STRING)
-	register_setting("api_token", "", TYPE_STRING)
-	register_setting("api_model", "meta-llama/llama-3.3-70b-instruct:free", TYPE_STRING)	
+	register_setting("global/api_url", "https://openrouter.ai/api/v1/chat/completions", TYPE_STRING)
+	register_setting("global/api_token", "", TYPE_STRING)
+	register_setting("global/api_model", "meta-llama/llama-3.3-70b-instruct:free", TYPE_STRING)	
 	# ✅ Register UI Panel
 	settings_panel = preload("res://addons/ai_dialog/AIPluginSettings.tscn").instantiate()
 	add_control_to_dock(EditorPlugin.DOCK_SLOT_LEFT_UR, settings_panel)

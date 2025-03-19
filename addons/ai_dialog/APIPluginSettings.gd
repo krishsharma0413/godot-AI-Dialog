@@ -11,19 +11,18 @@ func _ready():
 		queue_free()  # Ensure this script runs only in the editor
 
 	# Load saved settings from Project Settings
-	api_key_input.text = ProjectSettings.get("api_token")
-	api_url_input.text = ProjectSettings.get("api_url")
-	model_input.text = ProjectSettings.get("api_model")
+	api_key_input.text = ProjectSettings.get("global/api_token")
+	api_url_input.text = ProjectSettings.get("global/api_url")
+	model_input.text = ProjectSettings.get("global/api_model")
 
 	# Connect save button
 	save_button.pressed.connect(_save_settings)
 
 func _save_settings():
 	# Save to Project Settings
-	ProjectSettings.set("api_token", api_key_input.text)
-	ProjectSettings.set("api_model", model_input.text)
-	ProjectSettings.set("api_url", api_url_input.text)
-
-	# Ensure the settings persist
+	ProjectSettings.set_setting("global/api_token", api_key_input.text)
+	ProjectSettings.set_setting("global/api_model", model_input.text)
+	ProjectSettings.set_setting("global/api_url", api_url_input.text)
+		# Ensure the settings persist
 	ProjectSettings.save()
 	print("✅ AI Dialog Settings Saved!")

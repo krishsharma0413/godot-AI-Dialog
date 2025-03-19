@@ -20,28 +20,28 @@ func _init() -> void:
 	
 func debug_project_settings():
 	print("\n🔍 Checking Project Settings before loading:")
-	print("ai_dialog/api_url exists? ", ProjectSettings.has_setting("api_url"))
-	print("ai_dialog/api_token exists? ", ProjectSettings.has_setting("api_token"))
-	print("ai_dialog/api_model exists? ", ProjectSettings.has_setting("api_model"))
+	print("global/api_url exists? ", ProjectSettings.has_setting("api_url"))
+	print("global/api_token exists? ", ProjectSettings.has_setting("api_token"))
+	print("global/api_model exists? ", ProjectSettings.has_setting("api_model"))
 
-	if ProjectSettings.has_setting("api_url"):
-		print("🔗 API URL:", ProjectSettings.get("api_url"))
-	if ProjectSettings.has_setting("api_token"):
-		print("🔑 API Token:", ProjectSettings.get("api_token"))
-	if ProjectSettings.has_setting("api_model"):
-		print("🤖 API Model:", ProjectSettings.get("api_model"))
+	if ProjectSettings.has_setting("global/api_url"):
+		print("🔗 API URL:", ProjectSettings.get("global/api_url"))
+	if ProjectSettings.has_setting("global/api_token"):
+		print("🔑 API Token:", ProjectSettings.get("global/api_token"))
+	if ProjectSettings.has_setting("global/api_model"):
+		print("🤖 API Model:", ProjectSettings.get("global/api_model"))
 		
 func check_and_load_settings():
-	if ProjectSettings.has_setting("api_url"):
-		api_link = ProjectSettings.get("api_url")
+	if ProjectSettings.has_setting("global/api_url"):
+		api_link = ProjectSettings.get("global/api_url")
 	else:
 		push_warning("🚨 Warning: api_url not found in ProjectSettings!")
 
-	if ProjectSettings.has_setting("api_token"):
-		api_token = ProjectSettings.get_setting("api_token")
+	if ProjectSettings.has_setting("global/api_token"):
+		api_token = ProjectSettings.get_setting("global/api_token")
 
-	if ProjectSettings.get_setting("api_model"):
-		api_model = ProjectSettings.get_setting("api_model")
+	if ProjectSettings.get_setting("global/api_model"):
+		api_model = ProjectSettings.get_setting("global/api_model")
 
 func _ready():
 	"""Ensures HTTPRequest is properly initialized in the scene tree """

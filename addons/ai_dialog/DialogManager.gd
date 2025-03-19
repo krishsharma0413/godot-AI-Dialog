@@ -17,8 +17,6 @@ func add_personality(personal: String) -> void:
 		"content": personal
 	})
 
-
-
 func get_all_messages() -> Array:
 	"""
 	Returns all messages in the messages array.
