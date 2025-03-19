@@ -21,7 +21,6 @@ and use
 ```gdscript
 var NPC = DialogManager.new()
 add_child(NPC)
-await NPC.ready
 
 # Each NPC needs a personality to start. Without personality the NPC will not respond properly.
 NPC.add_personality("You are an NPC in a game world where the player can interact with you. You are a farmer in a medival world. Give small answers.")
