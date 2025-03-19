@@ -29,8 +29,6 @@ text = "API Token"
 [node name="ApiKeyInput" type="LineEdit" parent="VBoxContainer/HBoxContainerAPI"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = ""
-placeholder_text = "sk-or-v1-..."
 
 [node name="HBoxContainerModel" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -42,8 +40,6 @@ text = "Model Name"
 [node name="ModelInput" type="LineEdit" parent="VBoxContainer/HBoxContainerModel"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = ""
-placeholder_text = "meta-llama/llama-3.3-70b-instruct:free"
 
 [node name="HBoxContainerAPIURL" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -55,8 +51,6 @@ text = "API Endpoint"
 [node name="ApiURLInput" type="LineEdit" parent="VBoxContainer/HBoxContainerAPIURL"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = ""
-placeholder_text = "https://openrouter.ai/api/v1/chat/completions"
 
 [node name="SaveButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
