@@ -20,6 +20,8 @@ api_token = "your token from openrouter"
 and use
 ```gdscript
 var NPC = DialogManager.new()
+add_child(NPC)
+await NPC.ready
 
 # Each NPC needs a personality to start. Without personality the NPC will not respond properly.
 NPC.add_personality("You are an NPC in a game world where the player can interact with you. You are a farmer in a medival world. Give small answers.")
@@ -28,7 +30,7 @@ NPC.add_personality("You are an NPC in a game world where the player can interac
 NPC.provide_context("Player will come to you for quests. Talk to them normally while also giving them the quest of collecting 100 honey pots for you. Make up a story for why you need it.")
 
 # Get a reply when the player said something
-var response:String = NPC.generate_dialog("This is something the Player will say. something like a dialog or fixed choice or even processed speech recognization, possibilities are endless")
+var response:String = await NPC.generate_dialog("This is something the Player will say. something like a dialog or fixed choice or even processed speech recognization, possibilities are endless")
 
 #print response or something with it
 print(response)
