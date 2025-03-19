@@ -3,23 +3,21 @@ extends Node
 class_name  DialogManager
 
 var client: APIRequest
-var personality:String
 
-func add_personality(personality: String) -> void:
+func _ready() -> void:
+	client = APIRequest.new()
+	add_child(client)
+
+func add_personality(personal: String) -> void:
 	"""
 	Add a personality to the NPC.
 	"""
-	self.personality = personality
 	client.update_messages({
 		"role": "developer",
-		"content": personality
+		"content": personal
 	})
 
-func _ready() -> void:
-	client = await APIRequest.new()
-	add_child(client)
-	
-	print(await self.generate_dialog("hello"))
+
 
 func get_all_messages() -> Array:
 	"""
